@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramya R | Software Developer</title>
+<meta name="description" content="Ramya R - Aspiring Software Developer portfolio">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{--bg:#080b12;--card:#101522;--text:#f5f7fb;--muted:#9da7ba;--accent:#7c5cff;--accent2:#00d4ff;--border:rgba(255,255,255,.09)}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+body:before{content:"";position:fixed;width:500px;height:500px;left:-180px;top:-180px;background:rgba(124,92,255,.18);filter:blur(100px);border-radius:50%;z-index:-1}
+body:after{content:"";position:fixed;width:450px;height:450px;right:-150px;bottom:-150px;background:rgba(0,212,255,.12);filter:blur(100px);border-radius:50%;z-index:-1}
+
+nav{position:fixed;top:0;width:100%;z-index:20;background:rgba(8,11,18,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;font-size:21px}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;color:var(--muted);font-size:14px}
+.nav-links a:hover{color:#fff}
+.menu{display:none;background:none;border:0;color:#fff;font-size:25px}
+
+section{max-width:1100px;margin:auto;padding:100px 24px}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:120px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center;width:100%}
+.badge{display:inline-flex;padding:8px 14px;border:1px solid var(--border);border-radius:50px;color:#cbd2df;background:rgba(255,255,255,.035);font-size:13px;margin-bottom:22px}
+h1{font-size:clamp(48px,7vw,82px);line-height:1.02;letter-spacing:-4px}
+.gradient{background:linear-gradient(90deg,#fff,#a993ff,#62e5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:18px;max-width:650px;margin:24px 0 30px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:13px 20px;border-radius:10px;border:1px solid var(--border);font-weight:600;font-size:14px;transition:.25s}
+.btn.primary{background:#fff;color:#080b12;border-color:#fff}
+.btn:hover{transform:translateY(-3px)}
+.btn.secondary:hover{border-color:#777}
+
+.profile-card{background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));border:1px solid var(--border);border-radius:26px;padding:34px;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,.3)}
+.avatar{width:125px;height:125px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;font-size:42px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.profile-card h3{font-size:23px}.profile-card p{font-size:14px;margin:5px 0 20px}
+.socials{display:flex;justify-content:center;gap:10px}.socials a{padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:12px;color:#cbd2df}
+
+.section-title{margin-bottom:42px}.eyebrow{color:#8f7cff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px}
+h2{font-size:38px;letter-spacing:-1.5px;margin-top:7px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.about p{color:var(--muted);font-size:16px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.info{padding:20px;background:var(--card);border:1px solid var(--border);border-radius:14px}
+.info strong{display:block;font-size:14px;margin-bottom:5px}.info span{color:var(--muted);font-size:13px}
+
+.skills{display:flex;flex-wrap:wrap;gap:12px}.skill{padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;color:#dce2ee;font-size:14px}
+
+.project{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:30px;position:relative;overflow:hidden}
+.project:before{content:"";position:absolute;width:180px;height:180px;right:-70px;top:-70px;background:rgba(124,92,255,.16);filter:blur(35px);border-radius:50%}
+.project-top{display:flex;justify-content:space-between;gap:20px;align-items:start}.project h3{font-size:24px}.tag{font-size:11px;padding:6px 10px;border-radius:30px;background:rgba(124,92,255,.12);color:#b9adff;border:1px solid rgba(124,92,255,.25)}
+.project p{color:var(--muted);margin:12px 0 20px}.project ul{color:#c5ccda;padding-left:20px}.project li{margin:8px 0}
+.tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.tech span{font-size:11px;color:#aeb8ca;padding:6px 9px;background:#171d2a;border-radius:6px}
+
+.timeline{display:grid;gap:16px}.item{border-left:2px solid #3d356c;padding:2px 0 18px 24px}.item h3{font-size:18px}.item .meta{color:#8f7cff;font-size:13px;margin:4px 0}.item p{color:var(--muted);font-size:14px}
+
+.contact{background:linear-gradient(135deg,rgba(124,92,255,.12),rgba(0,212,255,.06));border:1px solid var(--border);border-radius:24px;padding:45px;text-align:center}.contact p{color:var(--muted);margin:12px auto 25px;max-width:600px}
+footer{text-align:center;color:#667084;font-size:12px;padding:35px 20px;border-top:1px solid var(--border)}
+
+.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:760px){
+ .nav-links{display:none}.menu{display:block}
+ .nav-links.open{display:flex;position:absolute;top:65px;left:0;width:100%;padding:20px 24px;background:#0b0f18;flex-direction:column;gap:18px;border-bottom:1px solid var(--border)}
+ .hero-grid,.about{grid-template-columns:1fr;gap:40px}.hero{min-height:auto;padding-top:140px;padding-bottom:60px}
+ h1{letter-spacing:-2.5px}.profile-card{max-width:400px;margin:auto}section{padding:75px 20px}
+ .project-top{flex-direction:column}.contact{padding:30px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="nav-inner">
+  <a class="logo" href="#home">Ramya<span>.</span></a>
+  <button class="menu" id="menu">☰</button>
+  <div class="nav-links" id="links">
+   <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+  </div>
+ </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-grid">
+  <div class="reveal">
+   <div class="badge">✦ Open to Developer Opportunities</div>
+   <h1>Hi, I'm <span class="gradient">Ramya R.</span></h1>
+   <p>Aspiring Software Developer building practical, user-friendly web applications with Python, JavaScript, SQL and modern development tools.</p>
+   <div class="buttons">
+    <a class="btn primary" href="#projects">View My Work ↓</a>
+    <a class="btn secondary" href="mailto:ramyarramadoss@gmail.com">Let's Connect</a>
+   </div>
+  </div>
+  <div class="profile-card reveal">
+   <div class="avatar">RR</div>
+   <h3>Ramya R</h3>
+   <p>Aspiring Software Developer</p>
+   <div class="socials">
+    <a href="https://linkedin.com/in/ramya021" target="_blank">LinkedIn</a>
+    <a href="https://github.com/ramyaramadoss-005" target="_blank">GitHub</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="section-title reveal"><div class="eyebrow">01 — About</div><h2>A developer who loves building.</h2></div>
+ <div class="about">
+  <div class="reveal">
+   <p>I'm a final-year B.E. Computer Science and Engineering student at NPR College of Engineering & Technology. I enjoy turning ideas into useful applications and solving problems through code.</p><br>
+   <p>My experience includes web development, database integration, face-recognition based applications, data analysis, and RAG-based chatbot development.</p>
+  </div>
+  <div class="info-grid reveal">
+   <div class="info"><strong>Education</strong><span>B.E. CSE · Expected 2027</span></div>
+   <div class="info"><strong>CGPA</strong><span>7.89 / 10</span></div>
+   <div class="info"><strong>Location</strong><span>Pudukkottai, Tamil Nadu</span></div>
+   <div class="info"><strong>Focus</strong><span>Software & Web Development</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="section-title reveal"><div class="eyebrow">02 — Skills</div><h2>My toolkit.</h2></div>
+ <div class="skills reveal">
+  <span class="skill">Python</span><span class="skill">JavaScript</span><span class="skill">SQL</span>
+  <span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">Responsive Design</span>
+  <span class="skill">Streamlit</span><span class="skill">OpenCV</span><span class="skill">Pandas</span>
+  <span class="skill">NumPy</span><span class="skill">MySQL</span><span class="skill">Git</span>
+  <span class="skill">GitHub</span><span class="skill">VS Code</span><span class="skill">Jupyter Notebook</span>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="section-title reveal"><div class="eyebrow">03 — Projects</div><h2>Things I've built.</h2></div>
+ <article class="project reveal">
+  <div class="project-top"><h3>Smart Attendance with Student Management System</h3><span class="tag">Featured Project</span></div>
+  <p>A web-based student management and attendance platform combining face recognition, anti-spoofing and role-based access.</p>
+  <ul>
+   <li>Developed a face recognition attendance module using Python and OpenCV.</li>
+   <li>Implemented fraud detection and anti-spoofing checks for secure attendance.</li>
+   <li>Created four role-based logins: Admin, Staff, Student and Parent.</li>
+   <li>Built centralized student and attendance record management with HTML, CSS, JavaScript and MySQL.</li>
+  </ul>
+  <div class="tech"><span>Python</span><span>OpenCV</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>MySQL</span></div>
+ </article>
+</section>
+
+<section id="experience">
+ <div class="section-title reveal"><div class="eyebrow">04 — Experience</div><h2>Internship journey.</h2></div>
+ <div class="timeline">
+  <div class="item reveal"><h3>Elysium Technology Pvt. Ltd., Madurai</h3><div class="meta">1 Month · Sales Forecasting</div><p>Developed a Python-based sales forecasting solution to analyze historical sales data and predict future sales. Performed data preprocessing, analysis and model implementation.</p></div>
+  <div class="item reveal"><h3>Wiltech The Innovative Solution, Madurai</h3><div class="meta">1 Month · Memory Twin Chatbot</div><p>Developed a Memory Twin Chatbot using Python and Retrieval-Augmented Generation (RAG) concepts. Built an interactive Streamlit application and integrated chatbot components.</p></div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="contact reveal">
+  <div class="eyebrow">05 — Contact</div>
+  <h2>Let's build something useful.</h2>
+  <p>I'm looking for entry-level Developer / Software Developer opportunities and exciting projects where I can learn, contribute and grow.</p>
+  <div class="buttons" style="justify-content:center">
+   <a class="btn primary" href="mailto:ramyarramadoss@gmail.com">Email Me</a>
+   <a class="btn secondary" href="https://linkedin.com/in/ramya021" target="_blank">LinkedIn</a>
+   <a class="btn secondary" href="https://github.com/ramyaramadoss-005" target="_blank">GitHub</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>© <span id="year"></span> Ramya R · Built with HTML, CSS & JavaScript</footer>
+
+<script>
+const menu=document.getElementById('menu'), links=document.getElementById('links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
